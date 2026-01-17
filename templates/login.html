@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expiry Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .auth-toggle { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .auth-tab { background: none; border: none; cursor: pointer; color: #64748b; font-weight: 500; font-size: 0.95rem; padding-bottom: 0.5rem; }
+        .auth-tab.active { color: #1e293b; border-bottom: 2px solid #000; margin-bottom: -0.6rem; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-card" id="loginCard" data-mode="{{ mode }}">
+            <h2>Expiry Tracker</h2>
+
+            {% if error %}
+                <div class="error-banner">{{ error }}</div>
+            {% endif %}
+
+            <div class="auth-toggle">
+                <button class="auth-tab active" id="tab-login" onclick="switchMode('login')">Sign In</button>
+                <button class="auth-tab" id="tab-register" onclick="switchMode('register')">Register</button>
+            </div>
+
+            <form action="/login" method="POST" id="form-login">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-login">Access Inventory</button>
+            </form>
+
+            <form action="/register" method="POST" id="form-register" class="hidden">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Choose Username" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Choose Password" required autocomplete="new-password">
+                </div>
+                <button type="submit" class="btn-login">Create Account</button>
+            </form>
+
+            <div class="version-tag">System v2.1 • Multi-User Secure</div>
+        </div>
+    </div>
+
+    <script>
+        function switchMode(mode) {
+            const loginForm = document.getElementById('form-login');
+            const regForm = document.getElementById('form-register');
+            const tabLogin = document.getElementById('tab-login');
+            const tabReg = document.getElementById('tab-register');
+
+            if (mode === 'login') {
+                loginForm.classList.remove('hidden');
+                regForm.classList.add('hidden');
+                tabLogin.classList.add('active');
+                tabReg.classList.remove('active');
+            } else {
+                loginForm.classList.add('hidden');
+                regForm.classList.remove('hidden');
+                tabLogin.classList.remove('active');
+                tabReg.classList.add('active');
+            }
+        }
+
+        // 2. Pure JavaScript logic (No red errors!)
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.getElementById('loginCard');
+            // Read the mode from the HTML attribute we set above
+            const serverMode = card.getAttribute('data-mode');
+            
+            if (serverMode === 'register') {
+                switchMode('register');
+            }
+        });
+    </script>
+
+</body>
+</html>

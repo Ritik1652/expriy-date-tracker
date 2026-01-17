@@ -1,0 +1,214 @@
+[
+    {
+        "id": 1,
+        "name": "Milk",
+        "expiry_date": "2025-12-31",
+        "added_by": "admin",
+        "archived_at": "2026-01-08",
+        "category": "General"
+    },
+    {
+        "id": 1767877163,
+        "name": "venager",
+        "expiry_date": "2026-01-07",
+        "owner": "ayush",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-08",
+        "category": "General"
+    },
+    {
+        "id": 1767879042700,
+        "name": "rice",
+        "expiry_date": "2026-01-06",
+        "owner": "mohit",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-08",
+        "category": "General"
+    },
+    {
+        "id": 1767877661,
+        "name": "backery",
+        "expiry_date": "2026-01-08",
+        "owner": "ayush",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-09",
+        "category": "General"
+    },
+    {
+        "id": 1767878072883,
+        "name": "toy",
+        "expiry_date": "2026-01-08",
+        "owner": "admin",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-09",
+        "category": "General"
+    },
+    {
+        "id": 1767879030257,
+        "name": "cake",
+        "expiry_date": "2026-01-08",
+        "owner": "mohit",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-09",
+        "category": "General"
+    },
+    {
+        "id": 1767942145415,
+        "name": "bread",
+        "expiry_date": "2026-01-08",
+        "owner": "ram",
+        "added_at": "2026-01-09",
+        "archived_at": "2026-01-09",
+        "category": "General"
+    },
+    {
+        "id": 1767871249,
+        "name": "milk",
+        "expiry_date": "2026-01-09",
+        "owner": "admin",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1767876486,
+        "name": "pasta",
+        "expiry_date": "2026-01-09",
+        "owner": "admin",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1767877127,
+        "name": "eneargy drink",
+        "expiry_date": "2026-01-09",
+        "owner": "ayush",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1767879330874,
+        "name": "curd",
+        "expiry_date": "2026-01-10",
+        "owner": "mohit",
+        "added_at": "2026-01-08",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1767942020528,
+        "name": "cake",
+        "expiry_date": "2026-01-10",
+        "owner": "ayush",
+        "added_at": "2026-01-09",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768107352990,
+        "name": "gg",
+        "expiry_date": "2026-01-07",
+        "category_id": "cat_meds",
+        "owner": "ram",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768108364957,
+        "name": "chocolate",
+        "expiry_date": "2026-01-10",
+        "category_id": "cat_food",
+        "owner": "karan",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768108424631,
+        "name": "head ache tablet",
+        "expiry_date": "2026-01-10",
+        "category_id": "cat_meds",
+        "owner": "karan",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768108477799,
+        "name": "driving licence",
+        "expiry_date": "2026-01-10",
+        "category_id": "cat_docs",
+        "owner": "karan",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768109236071,
+        "name": "bat",
+        "expiry_date": "2026-01-10",
+        "category_id": "cat_1768108616",
+        "owner": "karan",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768110854828,
+        "name": "doll",
+        "expiry_date": "2026-01-10",
+        "category_id": "cat_1768110834",
+        "owner": "karan",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11",
+        "category": "General"
+    },
+    {
+        "id": 1768125456176692,
+        "name": "milk",
+        "expiry_date": "2026-01-10",
+        "category": "Food",
+        "owner": "ritika",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11"
+    },
+    {
+        "id": 1768125465143296,
+        "name": "cake",
+        "expiry_date": "2026-01-10",
+        "category": "Food",
+        "owner": "ritika",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11"
+    },
+    {
+        "id": 1768125609653362,
+        "name": "burger toy",
+        "expiry_date": "2026-01-01",
+        "category": "General",
+        "owner": "ritika",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11"
+    },
+    {
+        "id": 1768128980512751,
+        "name": "adhar card",
+        "expiry_date": "2026-01-10",
+        "category": "Documents",
+        "owner": "ritika",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11"
+    },
+    {
+        "id": 1768129089953477,
+        "name": "check",
+        "expiry_date": "2026-01-10",
+        "category": "money",
+        "owner": "ritika",
+        "added_at": "2026-01-11",
+        "archived_at": "2026-01-11"
+    }
+]

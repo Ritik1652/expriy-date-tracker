@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expiry Tracker - Inventory Health</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="logo">
+            <span class="icon">📦</span> Expiry Tracker
+        </div>
+        <span class="intelligence-badge">Expiry Intelligence Active</span> 
+    </div>
+    
+    <div class="user-actions">
+        <span class="user-name">{{ user.name }}</span>
+        <a href="/logout" class="btn-logout">Sign Out</a>
+    </div>
+</header>
+
+<div class="app-container">
+    
+    <aside class="category-sidebar" id="appSidebar">
+        <div class="sidebar-header">
+            <h3>Folders</h3>
+            <button class="btn-add-folder" onclick="App.openCategoryModal()" title="New Folder">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </button>
+        </div>
+        <ul id="categoryList" class="category-nav">
+            </ul>
+    </aside>
+
+    <main class="main-content">
+        <section class="status-strip">
+            <div class="status-metric safe">
+                <span class="label">Stable Items</span>
+                <span class="value" id="countSafe">-</span>
+            </div>
+            <div class="status-metric warn">
+                <span class="label">Expiring Soon</span>
+                <span class="value" id="countUrgent">-</span>
+            </div>
+            <div class="status-metric danger">
+                <span class="label">Expired</span>
+                <span class="value" id="countExpired">-</span>
+            </div>
+            <div class="status-metric">
+                <span class="label">System Status</span>
+                <span class="value" style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">
+                    <span style="color:var(--safe)">●</span> Monitoring
+                </span>
+            </div>
+        </section>
+
+        <section class="hero-card">
+            <div class="hero-content">
+                <h2 id="heroTitle">Analyzing Inventory...</h2>
+                <p id="heroSubtitle">Risk evaluation in progress.</p>
+            </div>
+            <div class="current-view-badge" id="currentViewBadge">All Items</div>
+        </section>
+
+        <div class="inventory-split">
+            
+            <section class="list-column">
+                <div class="list-header">
+                    <h3 style="color: var(--danger)">Attention Required</h3>
+                </div>
+                <div id="attentionList">
+                </div>
+            </section>
+
+            <section class="list-column">
+                <div class="list-header">
+                    <h3 style="color: var(--safe)">Stable Inventory</h3>
+                </div>
+                <div id="stableList">
+                </div>
+            </section>
+
+        </div>
+
+        <section class="activity-log">
+            <div class="log-header">SYSTEM ACTIVITY LOG</div>
+            <div id="activityFeed">
+                <div class="log-entry">
+                    <span class="log-time">00:00</span>
+                    <span>Daily expiry evaluation server-side check completed.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<button class="fab" id="fabBtn" aria-label="Add Item" title="Add New Item">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+</button>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Track New Item</h3>
+            <button class="close-modal" id="closeModal">&times;</button>
+        </div>
+        <form id="addItemForm">
+            <div class="form-group">
+                <label for="itemName">Item Name</label>
+                <input type="text" id="itemName" placeholder="e.g. Milk, Medications" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="itemCategory">Category</label>
+                <select id="itemCategory" class="form-select"></select>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="date" id="expiryDate" required>
+            </div>
+            <button type="submit" class="btn-primary">Add to Inventory</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay" id="catModalOverlay">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>New Category</h3>
+            <button class="close-modal" onclick="App.closeCategoryModal()">&times;</button>
+        </div>
+        <form id="addCategoryForm">
+            <div class="form-group">
+                <label>Category Name</label>
+                <input type="text" id="newCatName" placeholder="e.g. Skin Care" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn-primary">Create Folder</button>
+        </form>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

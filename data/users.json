@@ -1,0 +1,39 @@
+{
+    "admin": {
+        "password": "king1234",
+        "type": "superuser"
+    },
+    "staff": {
+        "password": "staff123",
+        "type": "read_write"
+    },
+    "ayush": {
+        "password": "ayush@2026",
+        "created_at": "2026-01-08"
+    },
+    "mohit": {
+        "password": "scrypt:32768:8:1$Z37g5Vg330VKa3Lx$f526ad8277ce5a64782bac27c1577ab9aac873fb375bbfdf276762f8fdd3ab2a2cd22d9405d11d7f3a1d226a18ef7deb8aae340d0ed0a364895dc0979265e979",
+        "type": "individual",
+        "created_at": "2026-01-08"
+    },
+    "ram": {
+        "password": "scrypt:32768:8:1$2RLX1a28srX6HOYw$28c4deabd4e55c968ae9d9819f0378a5f47987d2295f0aa39971bd314e90d86503623917cd12acb375943fdada8521f2866019cced3c2e4c70c7ad8521ecdbe4",
+        "type": "individual",
+        "created_at": "2026-01-09"
+    },
+    "karan": {
+        "password": "scrypt:32768:8:1$GRV2BAhlyriv2Qc1$09a0e19d90308eae99105eed751f5d746c4fdcd90cf6eb79d856820fd7401391477201c7c6445955496e2247655cd3f5dbc53c11b1d9234f5eb84f8441144bee",
+        "type": "individual",
+        "created_at": "2026-01-11"
+    },
+    "manish": {
+        "password": "scrypt:32768:8:1$48KyeMqIOu32o5UO$934cfe6d6dc754d57c5fbd3947e52ef0b7e1965c592c9983b7cfc843ea65e14340088b531b856f864933aa89324073f2b952efbce24af3671cc39f27b126f887",
+        "type": "individual",
+        "created_at": "2026-01-11"
+    },
+    "ritika": {
+        "password": "scrypt:32768:8:1$rBt6yHSSfNR3tKb3$e56be3426d06af7d347c8212b2ed7954b46d13634dd7420bfcdd812837556971d65e71816aa4008844ab84ca3d47e444722bb6900c544d682f304ce1ae4b36b0",
+        "type": "individual",
+        "created_at": "2026-01-11"
+    }
+}
